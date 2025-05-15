@@ -1,0 +1,432 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; /* Un gris claro de fondo */
+}
+
+.main-header {
+    background-color: #fff;
+    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+}
+
+.logo img {
+    height: 30px; /* Ajusta la altura del logo */
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+.main-navigation {
+    background-color: #fff; /* Fondo blanco */
+    border-bottom: 1px solid #eee;
+    padding: 40px 50px;
+}
+
+.main-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center; /* Alineación vertical */
+}
+
+.main-navigation ul li {
+    position: relative; /* Para posicionar el dropdown menu */
+    margin-right: 20px;
+}
+
+.main-navigation ul li:last-child {
+    margin-right: 0;
+}
+
+.main-navigation ul li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9em;
+}
+/* Estilos específicos para el dropdown de FRAGANCIAS (puedes usar una clase más específica si solo quieres esto en "FRAGANCIAS") */
+.main-navigation ul li.dropdown:nth-child(2) .dropdown-menu { /* Selecciona el segundo li (FRAGANCIAS) - ¡OJO! Esto es específico, considera usar una clase si es más robusto */
+    display: flex;
+    padding: 15px 20px; /* Ajusta el padding general del menú si es necesario */
+    width: auto; /* Ajusta el ancho según el contenido de las columnas */
+}
+
+.main-navigation ul li.dropdown:nth-child(2) .dropdown-menu > li {
+    padding: 0; /* Elimina el padding individual de los items del menú para controlar el espaciado de las columnas */
+    border-bottom: none; /* Elimina las líneas divisorias verticales entre columnas */
+    margin-right: 20px; /* Espacio entre columnas */
+}
+
+.main-navigation ul li.dropdown:nth-child(2) .dropdown-menu > li:last-child {
+    margin-right: 0; /* Elimina el margen derecho de la última columna */
+}
+
+.columna-dropdown {
+    display: flex;
+    flex-direction: column; /* Títulos y sub-ítems en columna dentro de cada columna */
+}
+
+.columna-dropdown > a {
+    font-weight: bold; /* Estilo para el título de la columna */
+    margin-bottom: 5px;
+    padding: 5px 0; /* Añade un poco de espacio alrededor del título */
+}
+
+.columna-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.columna-dropdown ul li a {
+    padding: 5px 15px;
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+.columna-dropdown ul li a:hover {
+    background-color: #f9f9f9;
+}
+
+/* Estilos para "MARCAS EXCLUSIVAS" y "VER TODO" si están fuera de las columnas */
+.main-navigation ul li.dropdown:nth-child(2) .dropdown-menu > li:not(.columna-dropdown) a {
+    display: block;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9em;
+    white-space: nowrap;
+    border-bottom: 1px solid #eee; /* Añade una línea divisoria si lo deseas */
+}
+
+.main-navigation ul li.dropdown:nth-child(2) .dropdown-menu > li:not(.columna-dropdown):last-child a {
+    border-bottom: none; /* Elimina la línea inferior del último elemento */
+}
+
+.main-navigation ul li.dropdown:nth-child(2) .dropdown-menu > li:not(.columna-dropdown) a:hover {
+    background-color: #f9f9f9;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    margin-right: 15px;
+    cursor: pointer;
+    display: none; /* Ocultar por defecto en pantallas grandes */
+}
+
+.search-bar {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 15px;
+    overflow: hidden;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    border: none;
+    flex-grow: 1;
+}
+
+.search-bar button[type="submit"] {
+    background: none;
+    border: none;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.search-bar svg {
+    width: 20px;
+    height: 20px;
+}
+
+.promotions-btn {
+    background-color: #eee;
+    color: #333;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.cart {
+    position: relative;
+    cursor: pointer;
+}
+
+.cart svg {
+    width: 25px;
+    height: 25px;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #ff6f61; /* Un rojo llamativo */
+    color: #fff;
+    border-radius: 50%;
+    padding: 3px 6px;
+    font-size: 0.8em;
+}
+
+.brands-bar {
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #eee;
+}
+
+.brand-logo img {
+    height: 25px; /* Ajusta la altura de los logos de las marcas */
+}
+
+.banner-section {
+    padding: 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.barra-busqueda-promos {
+    display: flex; /* Coloca los elementos en línea */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: center; /* Centra horizontalmente los elementos dentro del contenedor */
+    gap: 10px; /* Espacio entre el buscador y el botón */
+    /* Puedes agregar más estilos al contenedor si es necesario, como un ancho máximo */
+}
+
+.promotions-btn {
+    /* Los estilos existentes para .promotions-btn deberían seguir funcionando */
+    /* Asegúrate de que no haya estilos que estén forzando su posición anterior */
+    /* Por ejemplo, si tiene márgenes muy grandes a la izquierda, podrías ajustarlos */
+    margin-left: 0; /* Elimina cualquier margen izquierdo innecesario */
+}
+
+.banner-carousel {
+    position: relative;
+    overflow: hidden;
+    max-width: 960px; /* Ancho máximo del banner */
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.banner-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.banner-item img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.banner-text {
+    flex-grow: 1;
+}
+
+.view-more-btn {
+    background-color: #5cb85c; /* Un verde atractivo */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 15px;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev-arrow {
+    left: 10px;
+    border-radius: 5px;
+}
+
+.next-arrow {
+    right: 10px;
+    border-radius: 5px;
+}
+
+.featured-products {
+    padding: 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.featured-products h2 {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: center; /* Centrar el título */
+}
+
+.featured-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajustar ancho mínimo según necesidad */
+    gap: 20px;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.discount-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #000; /* Color de la etiqueta de descuento */
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.wishlist-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #333; /* Color del corazón */
+}
+
+.wishlist-btn svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+.products-section {
+    padding: 20px;
+     background-color: #fff;
+    margin-bottom: 20px;
+}
+.product-item {
+text-align: center;
+padding: 15px;
+border: 1px solid #ddd;
+border-radius: 5px;
+}      
+
+.product-item image {
+max-width: 30%;
+width: 5px; /* Ancho fijo */
+height: 15px; /* Alto fijo */
+object-fit: cover; /* Recorta o escala la imagen para ajustarse al contenedor manteniendo la proporción (puede recortar bordes) */    
+border-radius: 5px;
+margin-bottom: 10px;
+}        
+.product-item .user, .product-item .price {        
+    font-size: 0.9em;
+    color: #666;    
+    margin-bottom: 5px;
+}
+.product-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.product-info h3.brand {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.product-info h4.name {
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-info p.original-price {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.product-info p.discounted-price {
+    color: #ff6f61; /* Color del precio con descuento */
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.product-info p.installments {
+    font-size: 0.8em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.product-info p.installment-details {
+    font-size: 0.8em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.product-info p.cftea {
+    font-size: 0.7em;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.product-info p.tax-note {
+    font-size: 0.7em;
+    color: #999;
+}
+
+.main-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
