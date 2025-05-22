@@ -1,0 +1,599 @@
+/* Estilos para el contenedor principal del header */
+.top-header {
+    display: flex; /* Usa flexbox para alinear los elementos horizontalmente */
+    justify-content: space-between; /* Distribuye el espacio entre los grupos de elementos */
+    align-items: center; /* Centra los elementos verticalmente */
+    background-color: #fff; /* Fondo blanco */
+    padding: 10px 20px; /* Padding superior/inferior y lateral */
+    border-bottom: 1px solid #eee; /* Línea inferior ligera */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra sutil */
+    position: sticky; /* Opcional: para que se quede arriba al hacer scroll */
+    top: 0;
+    width: 100%;
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+/* Contenedores de secciones (izquierda, centro, derecha) */
+.header-left,
+.header-center,
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo "BM" */
+.logo img {
+    height: 40px; /* Ajusta el tamaño de tu logo */
+    margin-right: 15px; /* Espacio entre el logo y el botón de menú */
+}
+
+/* Botón de menú hamburguesa */
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px; /* Tamaño si usas icono de fuente */
+    cursor: pointer;
+    padding: 5px;
+    color: #333; /* Color del icono */
+    display: flex; /* Para centrar la imagen/icono si lo usas */
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-toggle img {
+    height: 24px; /* Tamaño si usas una imagen para el icono */
+    width: 24px;
+}
+
+
+/* Barra de búsqueda */
+.search-bar {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Bordes redondeados */
+    overflow: hidden; /* Asegura que el contenido respete el border-radius */
+    width: 300px; /* Ancho de la barra de búsqueda */
+    max-width: 100%; /* Para responsividad */
+}
+
+.search-bar input[type="text"] {
+    border: none;
+    padding: 8px 15px;
+    flex-grow: 1; /* Permite que el input ocupe el espacio disponible */
+    outline: none; /* Quita el contorno al hacer focus */
+}
+
+.search-button {
+    background-color: #f0f0f0; /* Color de fondo del botón de búsqueda */
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-button img {
+    height: 18px; /* Tamaño del icono de lupa */
+    width: 18px;
+}
+
+
+/* Botón de "PROMOS" */
+.promos-button {
+    background-color: transparent; /* Fondo transparente */
+    border: 1px solid #7e7b75; /* Borde dorado/anaranjado */
+    color: #0e0d0d; /* Texto dorado/anaranjado */
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 15px; /* Espacio antes del carrito */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.promos-button:hover {
+    background-color: #32bde0; /* Fondo celeste o cerca al pasar el mouse */
+    color: #fff; /* Texto blanco al pasar el mouse */
+}
+
+/* Icono del carrito */
+.cart-icon {
+    position: relative; /* Para posicionar el contador de ítems */
+    text-decoration: none;
+    color: #333;
+    font-size: 24px; /* Tamaño si usas icono de fuente */
+    display: flex;
+    align-items: center;
+}
+
+.cart-icon img {
+    height: 24px; /* Tamaño si usas una imagen para el carrito */
+    width: 24px;
+}
+
+.cart-count {
+    background-color: #e0b232; /* Color de fondo del contador */
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 50%; /* Forma circular */
+    padding: 3px 6px; /* Ajusta el padding para el tamaño del número */
+    position: absolute;
+    top: -8px; /* Posición vertical */
+    right: -8px; /* Posición horizontal */
+    line-height: 1; /* Ajusta la altura de línea para centrar el número */
+    text-align: center;
+}
+
+
+.main-nav {
+    background-color: #fff; /* Fondo blanco para la barra de navegación */
+    padding: 10px 0;
+    border-bottom: 1px solid #eee; /* Línea sutil en la parte inferior */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    text-align: center; /* Centrar los elementos del menú si deseas */
+}
+
+.main-categories {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Convierte los elementos de la lista en flex-items */
+    justify-content: center; /* Centra los títulos horizontalmente */
+}
+
+.main-categories > li {
+    position: relative; /* Importante para posicionar el submenú */
+    margin: 0 20px; /* Espacio entre los títulos principales */
+    /* Elimina el margin-bottom que usábamos para el menú vertical */
+}
+
+.main-categories .category-title {
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    /* Quitamos el border-bottom y el margin-bottom de aquí, ya que ahora son enlaces horizontales */
+    transition: color 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+.main-categories .category-title:hover {
+    color: #e0b232; /* Color dorado al pasar el mouse, similar a la imagen */
+}
+
+/* Estilos para los menús desplegables (subcategorías) */
+.dropdown-menu-horizontal {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #fff; /* Fondo blanco del submenú */
+    border: 1px solid #eee;
+    border-radius: 5px;
+    position: absolute; /* Posicionamiento absoluto respecto al li padre */
+    top: 100%; /* Coloca el submenú justo debajo del título principal */
+    left: 50%; /* Centra el submenú debajo del título */
+    transform: translateX(-50%); /* Ajuste para centrado perfecto */
+    min-width: 150px; /* Ancho mínimo para el submenú */
+    z-index: 1000; /* Asegura que el submenú aparezca por encima de otros elementos */
+
+    /* Ocultar por defecto */
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Transición suave */
+}
+
+.main-categories > li:hover .dropdown-menu-horizontal {
+    display: block; /* Mostrar al pasar el mouse sobre el li padre */
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu-horizontal li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #555;
+    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu-horizontal li a:hover {
+    background-color: #f0f0f0; /* Fondo al pasar el mouse sobre los ítems del submenú */
+    color: #e0b232; /* Color dorado al pasar el mouse */
+}
+.sidebar {
+    width: 280px; /* Ajusta el ancho según sea necesario */
+    background-color: #f8f8f8;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    /* ... otros estilos del sidebar ... */
+}
+
+.product-categories {
+    list-style: none; /* Eliminar viñetas */
+    padding: 0;
+    margin: 0;
+    font-size: 1.1em; /* Tamaño de fuente para categorías principales */
+}
+
+.product-categories > li {
+    margin-bottom: 15px; /* Espacio entre categorías principales */
+}
+
+.product-categories .category-title {
+    display: block;
+    padding: 8px 0; /* Padding para los títulos de categoría */
+    text-decoration: none;
+    color: #333; /* Color de texto */
+    font-weight: bold; /* Negrita para los títulos */
+    border-bottom: 1px solid #eee; /* Línea divisoria opcional */
+    margin-bottom: 5px;
+}
+
+.subcategory-list {
+    list-style: none; /* Eliminar viñetas de subcategorías */
+    padding: 0;
+    margin: 0;
+    margin-left: 15px; /* Indentación para subcategorías */
+    font-size: 0.95em;
+}
+
+.subcategory-list > li {
+    margin-bottom: 5px; /* Espacio entre subcategorías */
+}
+
+.subcategory-list a {
+    display: block;
+    padding: 5px 0;
+    text-decoration: none;
+    color: #555; /* Color de texto para subcategorías */
+}
+
+.subcategory-list a:hover {
+    color: #007bff; /* Cambia el color al pasar el ratón */
+}
+
+/* Estilos específicos para los ítems más anidados (ej. LABIOS, CEJAS) */
+.item-list {
+    list-style: none; /* Eliminar viñetas */
+    padding: 0;
+    margin: 0;
+    margin-left: 15px; /* Doble indentación */
+    font-size: 0.9em; /* Fuente un poco más pequeña */
+}
+
+.item-list > li {
+    margin-bottom: 3px; /* Espacio entre ítems */
+}
+
+.item-list a {
+    display: block;
+    padding: 3px 0;
+    text-decoration: none;
+    color: #777; /* Color de texto más claro */
+}
+
+.item-list a:hover {
+    color: #007bff; /* Cambia el color al pasar el ratón */
+}
+
+/* Si quieres que los títulos "CATEGORIA" y "PRODUCTOS" sean negritas */
+.subcategory-list > li > a {
+    font-weight: bold; /* Opcional, si quieres que "CATEGORIA" y "PRODUCTOS" sean negritas */
+    color: #333;
+}
+
+/* Sección principal del slider */
+.hero-slider {
+    position: relative; /* Importante para posicionar el botón VER MÁS */
+    width: 100%;
+    overflow: hidden; /* Oculta partes de las imágenes que se salgan */
+    margin-top: 1px; /* Pequeño margen para separar de la barra de navegación */
+    display: flex; /* Para centrar el botón VER MÁS */
+    flex-direction: column; /* Coloca los elementos en columna */
+    align-items: center; /* Centra horizontalmente */
+}
+
+/* Contenedor de los slides */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px; /* Ajusta el ancho máximo del slider según tu diseño */
+    height: 350px; /* Altura fija para el slider */
+    overflow: hidden; /* Oculta slides no activos */
+    border-radius: 8px; /* Bordes redondeados para el slider */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Oculta los slides por defecto */
+    transition: opacity 0.8s ease-in-out; /* Transición suave para el cambio de slide */
+    display: flex; /* Para centrar el contenido dentro del slide */
+    align-items: center;
+    justify-content: center;
+    background-size: cover; /* Asegura que la imagen de fondo cubra el slide */
+    background-position: center; /* Centra la imagen de fondo */
+    flex-direction: column; /* Contenido del slide en columna */
+    text-align: center; /* Centra el texto */
+}
+
+.slide.active {
+    opacity: 1; /* Muestra el slide activo */
+}
+
+/* Estilos para la imagen de fondo dentro del slide */
+.slide-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* La imagen cubre todo el contenedor, recortando si es necesario */
+    filter: brightness(0.8); /* Oscurece un poco la imagen para que el texto resalte */
+}
+
+/* Contenido de texto dentro del slide */
+.slide-content {
+    position: absolute;
+    color: #fff; /* Color de texto blanco */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Sombra para el texto */
+    z-index: 10;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3); /* Fondo semitransparente para el texto */
+    border-radius: 8px;
+}
+
+.slide-content h2 {
+    font-size: 2.5em; /* Tamaño grande para el título */
+    margin-bottom: 10px;
+    font-weight: 300; /* Fuente más ligera */
+    color: #f0f0f0; /* Un blanco ligeramente apagado */
+}
+
+.slide-content p {
+    font-size: 1.1em;
+    line-height: 1.5;
+    max-width: 600px; /* Ancho máximo para el párrafo */
+}
+
+/* Flechas del slider */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 2em;
+    border-radius: 50%; /* Flechas circulares */
+    z-index: 20;
+    transition: background-color 0.3s ease;
+}
+
+.slider-arrow:hover {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.left-arrow {
+    left: 20px;
+}
+
+.right-arrow {
+    right: 20px;
+}
+
+/* Botón "VER MÁS" */
+.view-more-button {
+    display: block; /* Para que ocupe su propio bloque */
+    padding: 12px 30px;
+    background-color: #fff; /* Fondo blanco */
+    color: #131312; /* Texto negro */
+    border: 2px solid #0c0c0c; /* Borde negro */
+    border-radius: 25px; /* Bordes muy redondeados (pastilla) */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    margin-top: -25px; /* Superponerlo un poco sobre el slider */
+    z-index: 30; /* Asegurar que esté por encima */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.view-more-button:hover {
+    background-color: #636261;
+    color: #fff;
+    transform: scale(1.05); /* Ligeramente más grande al pasar el mouse */
+}
+
+/* Sección general de listado de productos */
+.product-listing-section {
+    padding: 30px 20px;
+    background-color: #fcfcfc; /* Un fondo muy claro */
+    text-align: center; /* Centrar los títulos y las cuadrículas */
+}
+
+.product-category-title {
+    font-size: 2.2em; /* Tamaño del título de la categoría (KRISKA, LABIAL) */
+    font-weight: 400; /* Un poco más ligero */
+    color: #333;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Cuadrícula de productos */
+.product-grid {
+    display: grid; /* Usa CSS Grid para la disposición en cuadrícula */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas responsivas */
+    gap: 20px; /* Espacio entre los ítems de la cuadrícula */
+    justify-content: center; /* Centra la cuadrícula si no llena todo el ancho */
+    max-width: 1200px; /* Ancho máximo de la cuadrícula */
+    margin: 0 auto 50px auto; /* Centrar la cuadrícula y dar margen inferior */
+    position: relative; /* Para posibles flechas de navegación */
+}
+
+/* Ítem de producto individual */
+.product-item {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative; /* Para posicionar los tags de promo/exclusivo */
+    overflow: hidden; /* Asegura que el contenido respete el border-radius */
+    display: flex; /* Usamos flex para organizar el contenido verticalmente */
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-item:hover {
+    transform: translateY(-5px); /* Efecto de levitar al pasar el mouse */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Tags de promoción y exclusivo */
+.product-promo-tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #3292e0; /* Color azul o  cerca */
+    color: white;
+    font-size: 0.75em;
+    padding: 4px 8px;
+    border-top-left-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 5;
+}
+
+.product-exclusive-tag {
+    position: absolute;
+    top: 30px; /* Debajo del tag de promo */
+    left: 0;
+    background-color: #a0a0a0; /* Gris */
+    color: white;
+    font-size: 0.7em;
+    padding: 3px 6px;
+    border-top-right-radius: 5px; /* Bordes redondeados sutiles */
+    border-bottom-right-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 5;
+}
+
+
+/* Imagen del producto */
+.product-image-link {
+    display: block; /* Para que la imagen ocupe su propio espacio */
+    margin-bottom: 10px;
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain; /* Asegura que la imagen se vea completa */
+    border-radius: 5px;
+    max-height: 200px; /* Altura máxima para las imágenes de producto */
+}
+
+/* Información del producto */
+.product-info {
+    flex-grow: 1; /* Permite que la información ocupe el espacio restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye el espacio entre el texto y el botón */
+    width: 100%;
+}
+
+.product-brand {
+    font-size: 0.85em;
+    color: #888;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.product-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+
+.product-type {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #141414; /* Color dorado/anaranjado para el precio */
+    margin-bottom: 5px;
+}
+
+.product-installments,
+.product-cftca,
+.product-taxes {
+    font-size: 0.8em;
+    color: #666;
+    margin-bottom: 3px;
+}
+
+.product-installments {
+    color: #007bff; /* Color azul para las cuotas */
+    font-weight: bold;
+}
+
+
+/* Botón "AGREGAR AL CARRITO" */
+.add-to-cart-button {
+    background-color: #0f0f0f; /* Color dorado/anaranjado */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 15px; /* Espacio superior */
+    width: 90%; /* Ancho del botón */
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+    background-color: #4d4940; /* Tono más oscuro al pasar el mouse */
+}
+
+/* Estilos para las flechas de navegación del carrusel de productos (si las implementas con JS) */
+/*
+.product-carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5em;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.right-arrow-product {
+    right: 0;
+}
+*/
